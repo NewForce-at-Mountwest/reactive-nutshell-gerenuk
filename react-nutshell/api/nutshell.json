@@ -1,39 +1,52 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "Jacob",
-        "password": "admin",
-        "email": "jacobperry@newforce.com"
-      }
-    ],
-    "events": [
-        {
-            "id": 1,
-            "title": "Octoberfest",
-            "date": "10/05/2019",
-            "location": "Huntington",
-            "userId" : 1
-        }
-    ],
-    "news" : [
-        {
-            "id" : 1,
-            "title": "New Nike Shoe",
-            "synopsis":"Nike releases a new shoe",
-            "date" : "10/03/2019",
-            "url": "youtube.com",
-            "userId": 1
-        }
-    ],
-    "tasks": [
-        {
-            "id": 1,
-            "name": "Clean House",
-            "date": "10/02/2019",
-            "description": "I clean the house derp",
-            "userId": 1,
-            "completed": true
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Jacob",
+      "password": "admin",
+      "email": "jacobperry@newforce.com"
+    },
+    {
+      "name": "Seaver",
+      "password": "admin",
+      "email": "seaver@newforce.com",
+      "id": 2
+    },
+    {
+      "name": "ryan",
+      "password": "admin",
+      "email": "ryan@newforce.com",
+      "id": 3
+    }
+
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "Octoberfest",
+      "date": "10/05/2019",
+      "location": "Huntington",
+      "userId": 1
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "New Nike Shoe",
+      "synopsis": "Nike releases a new shoe",
+      "date": "10/03/2019",
+      "url": "youtube.com",
+      "userId": 1
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Clean House",
+      "date": "10/02/2019",
+      "description": "I clean the house derp",
+      "userId": 1,
+      "completed": true
+    }
+  ]
 }
