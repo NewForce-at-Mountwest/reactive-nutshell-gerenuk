@@ -1,5 +1,9 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
+import Home from "./home/Home";
+import RegistrationCard from "./auth/RegistrationCard";
+import LoginCard from "./auth/LoginCard";
+
 
 import NewsForm from "./news/NewsForm";
 import NewsDetail from "./news/NewsDetail";
@@ -97,9 +101,27 @@ class ApplicationViews extends Component {
             }
           }}
         />
+        <Route
+                  exact
+                  path="/home"
+                  render={props => {
+                    return <Home {...this.props}/>;
+                  }}
+                />
+               <Route
+                  exact
+                  path="/auth"
+                  render ={props =>{
+                      return <RegistrationCard {...props}/>;
+                  }} />
+                  <Route
+                  exact
+                  path="/auth/LoginCard"
+                  render ={props =>{
+                      return <LoginCard {...props}/>;
+                  }} />
         </React.Fragment>
       );
     }
   }
-
-  export default ApplicationViews;
+export default ApplicationViews
