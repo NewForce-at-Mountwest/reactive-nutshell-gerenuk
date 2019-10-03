@@ -1,6 +1,14 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
+
+// this is the start of the Tasks Imports
+import TaskList from "./tasks/TaskList";
+import TaskForm from "./tasks/TaskNewForm";
+import TaskEditForm from './tasks/TaskEditForm'
+// this is the end of the Task imports
+
 import Home from "./home/Home";
+// imports for login
 import RegistrationCard from "./auth/RegistrationCard";
 import LoginCard from "./auth/LoginCard";
 import NewsForm from "./news/NewsForm";
@@ -118,6 +126,28 @@ class ApplicationViews extends Component {
                   render ={props =>{
                       return <LoginCard {...props}/>;
                   }} />
+                     {/* this is the start of the tasks routes */}
+        <Route
+          exact
+          path="/tasks"
+          render={props => {
+            return <TaskList {...props} />;
+          }}
+        />
+        <Route
+          path="/tasks/new"
+          render={props => {
+            return <TaskForm {...props} />;
+          }}
+        />
+        <Route
+          path="/tasks/:taskId(\d+)/edit"
+          render={props => {
+            return <TaskEditForm {...props} />;
+          }}
+        />
+
+        {/* this is the end of the routes for the tasks */}
         </React.Fragment>
       );
     }
