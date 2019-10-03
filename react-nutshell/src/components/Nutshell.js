@@ -1,16 +1,16 @@
 import React, { Component } from "react"
-import ApplicationViews from './ApplicationViews'
+import ApplicationViews from "./ApplicationViews"
 
 
 
 class Nutshell extends Component {
-    render() {
-      return (
-        <>
-          <ApplicationViews />
-        </>
-      )
-    }
+  render() {
+    return (
+      <>
+        <ApplicationViews />
+      </>
+    )
   }
+}
 
-  export default Nutshell
+export default Nutshell

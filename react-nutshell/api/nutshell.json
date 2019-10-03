@@ -5,6 +5,39 @@
       "name": "Jacob",
       "password": "admin",
       "email": "jacobperry@newforce.com"
+<<<<<<< HEAD
+=======
+    },
+    {
+      "name": "Seaver",
+      "password": "admin",
+      "email": "seaver@newforce.com",
+      "id": 2
+    },
+    {
+      "name": "ryan",
+      "password": "admin",
+      "email": "ryan@newforce.com",
+      "id": 3
+    },
+    {
+      "name": "Jacob",
+      "password": "admin",
+      "email": "Jacobemail@email.com",
+      "id": 4
+    },
+    {
+      "name": "Jacob",
+      "password": "admin",
+      "email": "Jacobemail@email.com",
+      "id": 5
+    },
+    {
+      "name": "Seaver",
+      "password": "tardy",
+      "email": "seaver1@newforce.com",
+      "id": 6
+>>>>>>> master
     }
   ],
   "events": [
@@ -29,11 +62,16 @@
   "tasks": [
     {
       "id": 1,
+<<<<<<< HEAD
       "task": "Clean House",
+=======
+      "name": "Clean House",
+>>>>>>> master
       "date": "10/02/2019",
       "description": "I clean the house derp",
       "userId": 1,
       "completed": true
+<<<<<<< HEAD
     },
     {
       "id": 2,
@@ -50,6 +88,8 @@
       "description": "I walk the dog derp",
       "userId": 1,
       "completed": true
+=======
+>>>>>>> master
     }
   ]
 }
