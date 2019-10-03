@@ -10,10 +10,10 @@ export default class NewsCard extends Component {
       <div className="card">
         <div className="card-body">
           <h5 className="card-title">{this.props.news.title}</h5>
-          <a href={this.props.news.url} alt="news link">{this.props.news.url}</a>
+          <a target ="_blank" rel="noopener noreferrer" href={this.props.news.url} alt="news link">{this.props.news.url}</a>
           <p>{this.props.news.synopsis}</p>
         </div>
-            <Link className="nav-link mng-link" to={`/news/${this.props.news.id}`}>
+            <Link className="manage" to={`/news/${this.props.news.id}`}>
             Manage
             </Link>
 
