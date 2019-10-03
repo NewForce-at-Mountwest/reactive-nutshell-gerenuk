@@ -19,7 +19,7 @@ class TaskCard extends Component {
             <button onClick={() => this.props.editTask}>Edit Task!</button>
           </Link>
 
-          <button
+          <button type="checkbox"
             onClick={() => this.props.deleteTaskProp(this.props.TaskProp.id)}
           >
             Delete Task!
