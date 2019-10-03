@@ -3,12 +3,10 @@ import React, { Component } from "react";
 import Home from "./home/Home";
 import RegistrationCard from "./auth/RegistrationCard";
 import LoginCard from "./auth/LoginCard";
-
-
 import NewsForm from "./news/NewsForm";
 import NewsDetail from "./news/NewsDetail";
 import NewsEditForm from "./news/NewsEditForm";
-import newsManager from "../modules/newsManager"
+import NewsManager from "../modules/NewsManager"
 import NewsList from "./news/NewsList"
 class ApplicationViews extends Component {
     state={
@@ -17,7 +15,7 @@ class ApplicationViews extends Component {
     isAuthenticated = () => localStorage.getItem("credentials") !== null;
 
     deleteNews = id => {
-        return newsManager.deleteNews(id).then(news =>
+        return NewsManager.deleteNews(id).then(news =>
           this.setState({
             news: news
           })
@@ -25,8 +23,8 @@ class ApplicationViews extends Component {
       }
 
       addNews = newsObject => {
-        return newsManager.addNews(newsObject)
-          .then(() => newsManager.getAll())
+        return NewsManager.addNews(newsObject)
+          .then(() => NewsManager.getAll())
           .then(news =>
             this.setState({
               news: news
@@ -35,8 +33,8 @@ class ApplicationViews extends Component {
       }
 
       updateNews = editedNewsObject => {
-        return newsManager.updateNews(editedNewsObject)
-          .then(() => newsManager.getAll())
+        return NewsManager.updateNews(editedNewsObject)
+          .then(() => NewsManager.getAll())
           .then(news =>
             this.setState({
               news: news

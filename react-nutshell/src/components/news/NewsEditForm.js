@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import newsManager from "../../modules/newsManager";
+import NewsManager from "../../modules/NewsManager";
 
 export default class NewsEditForm extends Component{
     state = {
@@ -25,7 +25,7 @@ export default class NewsEditForm extends Component{
         .then(() => this.props.history.push("/news"))
     };
     componentDidMount(){
-        newsManager.getOne(this.props.match.params.newsId).then(news => {
+        NewsManager.getOne(this.props.match.params.newsId).then(news => {
             this.setState({
                 newsTitle:news.title,
                 newsSynopsis:news.synopsis,
