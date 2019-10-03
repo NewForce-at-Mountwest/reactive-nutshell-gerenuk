@@ -1,15 +1,105 @@
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Home from "./home/Home";
 import RegistrationCard from "./auth/RegistrationCard";
 import LoginCard from "./auth/LoginCard";
+import NewsForm from "./news/NewsForm";
+import NewsDetail from "./news/NewsDetail";
+import NewsEditForm from "./news/NewsEditForm";
+import NewsManager from "../modules/NewsManager"
+import NewsList from "./news/NewsList"
+class ApplicationViews extends Component {
+    state={
+        news:[]
+    };
+    isAuthenticated = () => localStorage.getItem("credentials") !== null;
 
-    class ApplicationViews extends Component {
-        render() {
-            return (
-              <React.Fragment>
-                  {/* -----------------This is the Start Of the Login/Register Routes------------------ */}
-                <Route
+    deleteNews = id => {
+        return NewsManager.deleteNews(id).then(news =>
+          this.setState({
+            news: news
+          })
+        );
+      }
+
+      addNews = newsObject => {
+        return NewsManager.addNews(newsObject)
+          .then(() => NewsManager.getAll())
+          .then(news =>
+            this.setState({
+              news: news
+            })
+          );
+      }
+
+      updateNews = editedNewsObject => {
+        return NewsManager.updateNews(editedNewsObject)
+          .then(() => NewsManager.getAll())
+          .then(news =>
+            this.setState({
+              news: news
+            }))
+      }
+
+
+    // }
+    render() {
+      return (
+        <React.Fragment>
+          <Route
+          exact
+          path="/news"
+          render={props => {
+            if (this.isAuthenticated()) {
+              return <NewsList {...props} news={this.state.news} />
+            } else {
+              return <Redirect to="/" />
+            }
+          }}
+        />
+        <Route
+          path="/news/new"
+          render={props => {
+            if (this.isAuthenticated()) {
+              return <NewsForm {...props} addNews={this.addNews} />
+            } else {
+              return <Redirect to="/" />
+            }
+          }}
+        />
+        <Route
+          exact
+          path="/news/:newsId(\d+)"
+          render={props => {
+            if (this.isAuthenticated()) {
+              return (
+                <NewsDetail
+                  {...props}
+                  deleteNews={this.deleteNews}
+                  news={this.state.news}
+                />
+              )
+            } else {
+              return <Redirect to="/" />
+            }
+          }}
+        />
+        <Route
+          path="/news/:newsId(\d+)/edit"
+          render={props => {
+            if (this.isAuthenticated()) {
+              return (
+                <NewsEditForm {...props}
+                  updateNews={this.updateNews}
+                  news={this.state.news}
+                />
+              )
+            } else {
+              return <Redirect to="/" />
+            }
+          }}
+        />
+        <Route
                   exact
                   path="/home"
                   render={props => {
@@ -28,9 +118,8 @@ import LoginCard from "./auth/LoginCard";
                   render ={props =>{
                       return <LoginCard {...props}/>;
                   }} />
-                {/* -----------------This is the End Of the Login/Register Routes------------------ */}
-                </React.Fragment>
-            )}
-        }
-
+        </React.Fragment>
+      );
+    }
+  }
 export default ApplicationViews
