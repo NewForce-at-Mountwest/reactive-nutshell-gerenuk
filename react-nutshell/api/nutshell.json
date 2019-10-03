@@ -17,8 +17,25 @@
       "password": "admin",
       "email": "ryan@newforce.com",
       "id": 3
+    },
+    {
+      "name": "Jacob",
+      "password": "admin",
+      "email": "Jacobemail@email.com",
+      "id": 4
+    },
+    {
+      "name": "Jacob",
+      "password": "admin",
+      "email": "Jacobemail@email.com",
+      "id": 5
+    },
+    {
+      "name": "Seaver",
+      "password": "tardy",
+      "email": "seaver1@newforce.com",
+      "id": 6
     }
-
   ],
   "events": [
     {

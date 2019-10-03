@@ -20,7 +20,7 @@ import LoginCard from "./auth/LoginCard";
                   exact
                   path="/auth"
                   render ={props =>{
-                      return <RegistrationCard/>;
+                      return <RegistrationCard {...props}/>;
                   }} />
                   <Route
                   exact
