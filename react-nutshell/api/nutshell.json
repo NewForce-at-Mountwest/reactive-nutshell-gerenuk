@@ -50,12 +50,6 @@
       "description": "I walk the dog derp",
       "userId": 1,
       "completed": true
-    },
-    {
-      "task": "Do The Laundry",
-      "date": "10/08/19",
-      "description": "doing some laundry glibble globble",
-      "id": 4
     }
   ]
 }
