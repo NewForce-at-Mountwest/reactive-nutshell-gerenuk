@@ -3,7 +3,7 @@ import { ENGINE_METHOD_DIGESTS } from "constants";
 const remoteURL = "http://localhost:5002"
 
 export default {
-  get(id) {
+  getOne(id) {
     return fetch(`${remoteURL}/tasks/${id}`).then(result => result.json())
   },
   getAll() {
