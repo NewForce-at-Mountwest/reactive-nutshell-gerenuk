@@ -13,7 +13,7 @@ export default class NewsCard extends Component {
           <a target ="_blank" rel="noopener noreferrer" href={this.props.news.url} alt="news link">{this.props.news.url}</a>
           <p>{this.props.news.synopsis}</p>
         </div>
-            <Link className="manage" to={`/news/${this.props.news.id}`}>
+            <Link className="nav-link mng-link" to={`/news/${this.props.news.id}`}>
             Manage
             </Link>
 

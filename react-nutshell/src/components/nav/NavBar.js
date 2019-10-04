@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
-// import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 export default class NavBar extends Component {
 
     logout() {
@@ -9,7 +9,7 @@ export default class NavBar extends Component {
     }
     render() {
         return (
-            <nav className="navbar navbar-light fixed-top light-blue flex-md-nowrap p-0 shadow">
+            <nav className="navbar navbar-light fixed-center light-blue flex-md-nowrap p-0 shadow center">
                 <ul className="nav nav-pills">
                     <li className="nav-item">
                         {sessionStorage.getItem("userId") === null &&
