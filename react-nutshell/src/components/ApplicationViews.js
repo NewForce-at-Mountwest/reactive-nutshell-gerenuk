@@ -16,6 +16,7 @@ import NewsDetail from "./news/NewsDetail";
 import NewsEditForm from "./news/NewsEditForm";
 import NewsManager from "../modules/NewsManager"
 import NewsList from "./news/NewsList"
+
 class ApplicationViews extends Component {
     state={
         news:[]

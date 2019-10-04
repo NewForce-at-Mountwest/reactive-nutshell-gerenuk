@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NewsManager from "../../modules/NewsManager";
+import "./news.css"
 
 export default class NewsEditForm extends Component{
     state = {
