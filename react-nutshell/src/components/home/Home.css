@@ -1,0 +1,16 @@
+.frogPic{
+    width: 63%;
+    height: 25%;
+    margin-left: 200px;
+    -webkit-box-shadow: 5px 5px 26px 5px #000000;
+    box-shadow: 5px 5px 26px 5px #000000;
+}
+
+.logInButtons{
+    display: flex;
+    justify-content: center;
+    align-content:space-between;
+    margin-right: 40px;
+    margin-bottom:15px;
+
+}
