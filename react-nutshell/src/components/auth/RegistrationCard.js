@@ -33,7 +33,7 @@ class RegistrationCard extends Component {
             email: this.state.email
         })
     )
-    this.props.history.push("/home");
+    this.props.history.push("/");
 
   }
 
@@ -52,7 +52,7 @@ class RegistrationCard extends Component {
 
         // Create a User then redirect them to Home
         UserManager.post(newUser)
-        .then(() => this.props.history.push("/home"));
+        .then(() => this.props.history.push("/"));
     }
 }
 //   All input fields for registering a new User

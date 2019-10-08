@@ -6,7 +6,7 @@ class Registration extends Component {
     render() {
         return(
         <div>
-          <Link to={`/auth`}><button>Register</button></Link>
+          <Link to={`/auth`}><button className="btn btn-primary">Register</button></Link>
         </div>
         )}
 }
