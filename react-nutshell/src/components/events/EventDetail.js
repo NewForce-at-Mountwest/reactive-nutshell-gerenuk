@@ -14,7 +14,8 @@ class EventDetail extends Component {
 
   handleDelete = () => {
     this.setState({ loadingStatus: true });
-    EventManager.deleteEvent(this.props.eventId).then(() =>
+    EventManager.deleteEvent(this.props.eventId)
+    .then(() =>
       this.props.history.push("/events")
     );
   };
