@@ -46,7 +46,32 @@
       "userId": 1
     }
   ],
-  "news": [],
+  "news": [
+    {
+      "title": "New News Article",
+      "synopsis": "wrg",
+      "url": "weg",
+      "id": 1
+    },
+    {
+      "title": "",
+      "synopsis": "",
+      "url": "",
+      "id": 2
+    },
+    {
+      "title": "",
+      "synopsis": "",
+      "url": "",
+      "id": 3
+    },
+    {
+      "title": "",
+      "synopsis": "",
+      "url": "",
+      "id": 4
+    }
+  ],
   "tasks": [
     {
       "id": 1,
@@ -57,20 +82,8 @@
     {
       "id": 2,
       "task": "Take Out Trash!",
-      "date": "10/03/2019",
-      "description": "I take out the trash derp"
-    },
-    {
-      "id": 3,
-      "task": "Walk Dog",
       "date": "10/04/2019",
-      "description": "I walk the dog derp derp"
-    },
-    {
-      "task": "Have an existential crisis",
-      "date": "10/03/2019",
-      "description": "ya'll ever just sit and stare into the void?",
-      "id": 4
+      "description": "I take out the trash derp"
     }
   ]
 }

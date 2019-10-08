@@ -25,7 +25,9 @@ post(newTask){
 delete(id) {
     return fetch(`${remoteURL}/tasks/${id}`, {
       method: "DELETE"
-    }).then(result => result.json());
+    })
+    .then (()=> fetch(`${remoteURL}/tasks`))
+    .then(result => result.json());
   },
 
 
