@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import UserManager from "../../modules/UserManager";
 
 class LoginCard extends Component {
 
@@ -6,6 +7,7 @@ class LoginCard extends Component {
   state = {
     name: "",
     password: "",
+    userId:""
   }
 
   // Update state whenever an input field is edited
@@ -15,21 +17,27 @@ class LoginCard extends Component {
     this.setState(stateToChange)
   }
 
+
   handleLogin = (e) => {
     e.preventDefault()
-    /*
-        For now, just store the email and password that
-        the customer enters into local storage.
-    */
+
+  const nameValue = this.state.name;
+  const passwordValue = this.state.password;
+
+  UserManager.getOneUserName(nameValue)
+  .then(user =>{
+      console.log(passwordValue)
+   if(user[0].password === passwordValue){
     localStorage.setItem(
         "credentials",
-        JSON.stringify({
-            name: this.state.name,
-            password: this.state.password
-        })
-    )
-    this.props.history.push("/home");
-
+        JSON.stringify(
+            user[0].id
+        ))}
+    else {
+        window.alert("Incorrect Information");
+    }
+    this.props.history.push("/");
+  })
   }
 
 //    Text inputs to enter log in information

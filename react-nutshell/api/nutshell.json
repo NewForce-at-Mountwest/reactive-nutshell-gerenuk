@@ -17,25 +17,8 @@
       "password": "admin",
       "email": "ryan@newforce.com",
       "id": 3
-    },
-    {
-      "name": "Jacob",
-      "password": "admin",
-      "email": "Jacobemail@email.com",
-      "id": 4
-    },
-    {
-      "name": "Jacob",
-      "password": "admin",
-      "email": "Jacobemail@email.com",
-      "id": 5
-    },
-    {
-      "name": "Seaver",
-      "password": "tardy",
-      "email": "seaver1@newforce.com",
-      "id": 6
     }
+
   ],
   "events": [
     {
@@ -44,9 +27,22 @@
       "date": "10/05/2019",
       "location": "Huntington",
       "userId": 1
+    },
+    {
+      "title": "Halloween",
+      "date": "10/31/19",
+      "location": "Everywhere...",
+      "id": 2
     }
   ],
-  "news": [],
+  "news": [
+    {
+      "title": "Test23",
+      "synopsis": "te",
+      "url": "www.youtube.com",
+      "id": 1
+    }
+  ],
   "tasks": [
     {
       "id": 1,
