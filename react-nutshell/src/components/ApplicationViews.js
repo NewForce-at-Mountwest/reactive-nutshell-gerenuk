@@ -162,9 +162,14 @@ class ApplicationViews extends Component {
         exact
           path="/events"
           render={props => {
-            return <EventList
+              if(this.isAuthenticated()){
+            return (<EventList
             {...props}
-            events ={this.state.events} />;
+            events ={this.state.events}
+            />
+            );
+          }else{
+              return<Redirect to="/" />; }
           }}
         />
         <Route
@@ -203,7 +208,12 @@ class ApplicationViews extends Component {
           exact
           path="/tasks"
           render={props => {
-            return <TaskList {...props} />;
+              if (this.isAuthenticated()){
+            return (
+            <TaskList {...props} />);
+              }else{
+                  return <Redirect to ="/" />;
+              }
           }}
         />
         <Route
