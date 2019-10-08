@@ -20,10 +20,15 @@ import EventList from "./events/EventList";
 import EventNewForm from "./events/EventNewForm";
 import EventDetail from "./events/EventDetail";
 import EventEditForm from "./events/EventEditForm";
+import MessagesList from "./messages/MessagesList"
+import MessagesManager from "../modules/MessagesManager"
+
 
 class ApplicationViews extends Component {
   state = {
-    news: []
+    news: [],
+    messages:[],
+    users:[],
   };
   isAuthenticated = () => localStorage.getItem("credentials") !== null;
 
@@ -54,6 +59,25 @@ class ApplicationViews extends Component {
         })
       );
   };
+  addMessage = messageObject =>
+    MessagesManager.postMessage(messageObject)
+      .then(() => MessagesManager.getAllMessages())
+      .then(messages =>
+        this.setState({
+          messages: messages
+        })
+      // .then(MessagesManager.getAllMessages)
+      );
+
+  updateMessages = editedMessageObject => {
+        return MessagesManager.put(editedMessageObject)
+          .then(() => MessagesManager.getAllMessages())
+          .then(messages => {
+            this.setState({
+              messages: messages
+            });
+          });
+      };
 
   // }
   render() {
@@ -193,6 +217,17 @@ class ApplicationViews extends Component {
           render={props => {
               
             return <TaskEditForm {...props} />;
+          }}
+        />
+        <Route
+          path="/messages"
+          render={props => {
+            if (this.isAuthenticated()) {
+              return <MessagesList {...props} messages={this.state.messages} addMessage={this.addMessage} updateMessages={this.updateMessages}
+               />;
+            } else {
+              return <Redirect to="/" />
+            }
           }}
         />
 
