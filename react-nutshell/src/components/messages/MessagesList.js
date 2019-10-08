@@ -28,11 +28,16 @@ export default class MessagesList extends Component {
         evt.preventDefault();
         const message = {
             message: this.state.userMessage,
-            userId: parseInt(localStorage.getItem(`userId`))
+            userId: parseInt(localStorage.getItem(`credentials`))
         };
         this.props.addMessage(message)
-            .then(this.setState({ userMessage: "" }))
-    }
+            .then(()=>{
+                 MessagesManager.getAllMessages().then(message => {
+            this.setState({
+              messages: message,
+            });
+                this.setState({ userMessage: "" })})
+    })}
 
     editMessage = evt => {
         evt.preventDefault();
@@ -59,7 +64,7 @@ export default class MessagesList extends Component {
                     <h1>Message History</h1>
                     <ul className="MessageList">
                         {this.state.messages.map(singleMessage => {
-                            const sessionId = parseInt(localStorage.getItem(`userId`));
+                            const sessionId = parseInt(localStorage.getItem(`credentials`));
                             if (singleMessage.userId === sessionId) {
                                 if (singleMessage.id === this.state.messageToEdit.id) {
                                     return <div key={this.state.messageToEdit.id}><input

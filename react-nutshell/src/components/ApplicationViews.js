@@ -27,7 +27,8 @@ import MessagesManager from "../modules/MessagesManager"
 class ApplicationViews extends Component {
   state = {
     news: [],
-    messages:[]
+    messages:[],
+    users:[],
   };
   isAuthenticated = () => localStorage.getItem("credentials") !== null;
 
@@ -222,7 +223,7 @@ class ApplicationViews extends Component {
           render={props => {
             if (this.isAuthenticated()) {
               return <MessagesList {...props} messages={this.state.messages} addMessage={this.addMessage} updateMessages={this.updateMessages}
-              userId={parseInt(props.match.params.userId)} />;
+               />;
             } else {
               return <Redirect to="/" />
             }

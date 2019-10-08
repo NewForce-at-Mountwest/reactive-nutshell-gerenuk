@@ -30,8 +30,7 @@
       "id": 1,
       "title": "Octoberfest",
       "date": "10/05/2019",
-      "location": "Huntington",
-      "userId": 1
+      "location": "Huntington"
     },
     {
       "title": "Halloween",
@@ -79,6 +78,26 @@
       "message": "hey",
       "userId": 1,
       "id": 1
+    },
+    {
+      "message": "Fuck I hate you",
+      "userId": 4,
+      "id": 2
+    },
+    {
+      "message": "Fuck I hate you",
+      "userId": 4,
+      "id": 4
+    },
+    {
+      "message": "Kill me",
+      "userId": 4,
+      "id": 5
+    },
+    {
+      "message": "sdsd",
+      "userId": 4,
+      "id": 6
     }
   ]
 }
