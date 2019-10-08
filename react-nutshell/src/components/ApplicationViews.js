@@ -16,12 +16,43 @@ import NewsDetail from "./news/NewsDetail";
 import NewsEditForm from "./news/NewsEditForm";
 import NewsManager from "../modules/NewsManager"
 import NewsList from "./news/NewsList"
+import MessagesList from "./messages/MessagesList"
+import messagesManager from "../modules/messagesManager"
+
+
+
 
 class ApplicationViews extends Component {
     state={
-        news:[]
+        news:[],
+        messages: [],
+
+
+
     };
+
     isAuthenticated = () => localStorage.getItem("credentials") !== null;
+    addMessage = messageObject =>
+    messagesManager.postMessage(messageObject)
+      .then(() => messagesManager.getAllMessages())
+      .then(messages =>
+        this.setState({
+          messages: messages
+        })
+      // .then(MessagesManager.getAllMessages)
+      );
+
+  updateMessages = editedMessageObject => {
+        return messagesManager.put(editedMessageObject)
+          .then(() => messagesManager.getAllMessages())
+          .then(messages => {
+            this.setState({
+              messages: messages
+            });
+          });
+      };
+
+
 
     deleteNews = id => {
         return NewsManager.deleteNews(id).then(news =>
@@ -145,6 +176,16 @@ class ApplicationViews extends Component {
           path="/tasks/:taskId(\d+)/edit"
           render={props => {
             return <TaskEditForm {...props} />;
+          }}
+        />
+        <Route
+          path="/messages"
+          render={props => {
+            if (this.isAuthenticated()) {
+              return <MessagesList {...props} messages={this.state.messages} addMessage={this.addMessage} updateMessages={this.updateMessages}userId={parseInt(props.match.params.userId)} />;
+            } else {
+              return <Redirect to="/" />
+            }
           }}
         />
 
