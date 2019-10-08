@@ -21,12 +21,13 @@ import EventNewForm from "./events/EventNewForm";
 import EventDetail from "./events/EventDetail";
 import EventEditForm from "./events/EventEditForm";
 import MessagesList from "./messages/MessagesList"
-import MessagesManager from "../modules/messagesManager"
+import MessagesManager from "../modules/MessagesManager"
 
 
 class ApplicationViews extends Component {
   state = {
-    news: []
+    news: [],
+    messages:[]
   };
   isAuthenticated = () => localStorage.getItem("credentials") !== null;
 
@@ -220,7 +221,8 @@ class ApplicationViews extends Component {
           path="/messages"
           render={props => {
             if (this.isAuthenticated()) {
-              return <MessagesList {...props} messages={this.state.messages} addMessage={this.addMessage} updateMessages={this.updateMessages}userId={parseInt(props.match.params.userId)} />;
+              return <MessagesList {...props} messages={this.state.messages} addMessage={this.addMessage} updateMessages={this.updateMessages}
+              userId={parseInt(props.match.params.userId)} />;
             } else {
               return <Redirect to="/" />
             }

@@ -17,8 +17,13 @@
       "password": "admin",
       "email": "ryan@newforce.com",
       "id": 3
+    },
+    {
+      "name": "maark",
+      "password": "jdpower",
+      "email": "misfit3132@hotmail.com",
+      "id": 4
     }
-
   ],
   "events": [
     {
@@ -43,7 +48,6 @@
       "id": 1
     }
   ],
-
   "tasks": [
     {
       "id": 1,
@@ -75,26 +79,6 @@
       "message": "hey",
       "userId": 1,
       "id": 1
-    },
-    {
-      "message": "Fuck I hate you",
-      "userId": 1,
-      "id": 2
-    },
-    {
-      "message": "Fuck I hate you",
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "message": "Kill me",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "message": "eattadic",
-      "userId": 1,
-      "id": 5
     }
   ]
 }

@@ -1,13 +1,22 @@
+
 import { Component } from "react";
 import React from "react";
+import MessagesManager from "../../modules/MessagesManager"
 
 export default class MessagesList extends Component {
     state = {
         userId: "",
         userMessage: "",
         messageToEdit: {},
-        userEditMessage: ""
+        userEditMessage: "",
+        messages:[]
     };
+    componentDidMount() {
+        MessagesManager.getAllMessages().then(message => {
+            this.setState({
+              messages: message,
+            });
+        })}
 
     handleFieldChange = evt => {
         const stateToChange = {};
@@ -19,7 +28,7 @@ export default class MessagesList extends Component {
         evt.preventDefault();
         const message = {
             message: this.state.userMessage,
-            userId: parseInt(sessionStorage.getItem(`userId`))
+            userId: parseInt(localStorage.getItem(`userId`))
         };
         this.props.addMessage(message)
             .then(this.setState({ userMessage: "" }))
@@ -49,8 +58,8 @@ export default class MessagesList extends Component {
                 <div className="PastMessages">
                     <h1>Message History</h1>
                     <ul className="MessageList">
-                        {this.props.messages.map(singleMessage => {
-                            const sessionId = parseInt(sessionStorage.getItem(`userId`));
+                        {this.state.messages.map(singleMessage => {
+                            const sessionId = parseInt(localStorage.getItem(`userId`));
                             if (singleMessage.userId === sessionId) {
                                 if (singleMessage.id === this.state.messageToEdit.id) {
                                     return <div key={this.state.messageToEdit.id}><input
