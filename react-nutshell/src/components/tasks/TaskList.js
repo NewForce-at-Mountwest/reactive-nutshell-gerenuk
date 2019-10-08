@@ -19,9 +19,12 @@ class TaskList extends Component {
       .then(parsedTasks => {
           this.setState({
               tasks: parsedTasks
+
           })
-      })
-        }
+          })
+          .then(()=>
+        this.props.history.push("/tasks")
+          )}
 
 
 
