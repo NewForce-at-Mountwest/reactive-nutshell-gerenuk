@@ -14,7 +14,7 @@ class TaskForm extends Component {
         this.setState(stateToChange);
     };
 
-    /*  Local method for validation, set loadingStatus, create task      object, invoke the taskManager post method, and redirect to the full task list
+    /*  Local method for validation, set loadingStatus, create task object, invoke the taskManager post method, and redirect to the full task list
     */
     constructNewtask = evt => {
         evt.preventDefault();

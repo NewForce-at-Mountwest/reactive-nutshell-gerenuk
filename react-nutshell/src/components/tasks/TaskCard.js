@@ -5,8 +5,8 @@ class TaskCard extends Component {
   render() {
     return (
       <div className="card">
-        <div className="card-content">
-          <h3>
+        <div className="card-body">
+          <h3 class="card-body">
             Task:
             <br />
             <span>{this.props.TaskProp.task}</span>
@@ -16,14 +16,17 @@ class TaskCard extends Component {
             <span>{this.props.TaskProp.description}</span>
           </h3>
           <Link to={`/tasks/${this.props.TaskProp.id}/edit`}>
-            <button onClick={() => this.props.editTask}>Edit Task!</button>
+            <button className="btn btn-success" onClick={() => this.props.editTask}>Edit Task!</button>
           </Link>
 
-          <button type="checkbox"
+        <Link to="" refresh ="true">
+          <button type="checkbox" className ="btn btn-danger"
             onClick={() => this.props.deleteTaskProp(this.props.TaskProp.id)}
           >
             Delete Task!
           </button>
+          </Link>
+
         </div>
       </div>
     );

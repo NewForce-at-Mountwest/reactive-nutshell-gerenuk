@@ -19,9 +19,12 @@ class TaskList extends Component {
       .then(parsedTasks => {
           this.setState({
               tasks: parsedTasks
+
           })
-      })
-        }
+          })
+          .then(()=>
+        this.props.history.push("/tasks")
+          )}
 
 
 
@@ -46,7 +49,7 @@ class TaskList extends Component {
         <section className="section-content">
           <button
             type="button"
-            className="btn"
+            className="btn btn-primary"
             onClick={() => {
               this.props.history.push("/tasks/new");
             }}
