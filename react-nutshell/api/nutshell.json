@@ -17,16 +17,20 @@
       "password": "admin",
       "email": "ryan@newforce.com",
       "id": 3
+    },
+    {
+      "name": "maark",
+      "password": "jdpower",
+      "email": "misfit3132@hotmail.com",
+      "id": 4
     }
-
   ],
   "events": [
     {
       "id": 1,
       "title": "Octoberfest",
       "date": "10/05/2019",
-      "location": "Huntington",
-      "userId": 1
+      "location": "Huntington"
     },
     {
       "title": "Halloween",
@@ -67,6 +71,33 @@
       "date": "10/03/2019",
       "description": "ya'll ever just sit and stare into the void?",
       "id": 4
+    }
+  ],
+  "messages": [
+    {
+      "message": "hey",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "message": "Fuck I hate you",
+      "userId": 4,
+      "id": 2
+    },
+    {
+      "message": "Fuck I hate you",
+      "userId": 4,
+      "id": 4
+    },
+    {
+      "message": "Kill me",
+      "userId": 4,
+      "id": 5
+    },
+    {
+      "message": "sdsd",
+      "userId": 4,
+      "id": 6
     }
   ]
 }
