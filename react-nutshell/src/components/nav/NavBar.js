@@ -14,26 +14,12 @@ export default class NavBar extends Component {
                     <li className="nav-item">
                         {sessionStorage.getItem("userId") === null &&
                             localStorage.getItem("userId") === null
-                            ? (
-                                <Link className="nav-link" to="/">
-                                    Sign In
-                    </Link>
-                            ) : (
-                                <Link className="nav-link" to="/" onClick={this.logout}>
-                                    Sign Out
-                    </Link>
-                            )}
+                            }
                     </li>
                     <li className="nav-item">
                         {sessionStorage.getItem("userId") !== null ||
                             localStorage.getItem("userId") !== null
-                            ? (
-                                null
-                            ) : (
-                                <Link className="nav-link" to="/register" onClick={this.logout}>
-                                    Register
-                    </Link>
-                            )}
+                           }
                     </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/news">News</Link>
